@@ -1,6 +1,6 @@
 package model;
 
-public class Ereignis {
+public class Ereignis extends Tribut{
     private int id;
     private int tributId;
     Eventyp eventyp;
@@ -11,9 +11,9 @@ public class Ereignis {
 
     // 2. Getters
     public int getId() { return id; }
-    public int getTitle() { return tributId; }
-    public int getGenre() { return points; }
-    public int getRating() { return day; }
+    public int getTributId() { return tributId; }
+    public int getPoints() { return points; }
+    public int getDay() { return day; }
 
     @Override
     public String toString() {

@@ -1,6 +1,6 @@
 package model;
 
-public class Eventyp {
+public enum Eventyp {
     FOUND_SUPPLIES,
     INJURED,
     ATTACK,

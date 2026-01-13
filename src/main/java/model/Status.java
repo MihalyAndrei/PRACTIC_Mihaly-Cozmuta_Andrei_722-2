@@ -1,4 +1,6 @@
 package model;
 
-public class Status {
+public enum Status {
+    LEBENDIG,
+    TOT
 }
