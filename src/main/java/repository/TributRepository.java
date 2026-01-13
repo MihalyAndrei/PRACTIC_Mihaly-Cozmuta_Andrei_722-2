@@ -2,26 +2,26 @@ package repository;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import model.SponsorGeschenk;
+import model.Tribut;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SponsorGeschenkRepository {
-    private List<SponsorGeschenk> sponsorGeschenken = new ArrayList<>();
+public class TributRepository {
+    private List<Tribut> tributen = new ArrayList<>();
 
-    public SponsorGeschenkRepository() {
+    public TributRepository() {
         try {
             ObjectMapper mapper = new ObjectMapper();
-            sponsorGeschenken = mapper.readValue(new File("events.json"), new TypeReference<List<SponsorGeschenk>>(){});
+            tributen = mapper.readValue(new File("events.json"), new TypeReference<List<Tribut>>(){});
         } catch (IOException e) {
             System.out.println("Eroare la citire: " + e.getMessage());
         }
     }
 
-    public List<SponsorGeschenk> getAllSponsorGeschenken() {
-        return sponsorGeschenken;
+    public List<Tribut> getAllEreignisen() {
+        return tributen;
     }
 }
