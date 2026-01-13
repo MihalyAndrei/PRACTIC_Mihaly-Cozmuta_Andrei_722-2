@@ -5,22 +5,11 @@ import repository.EreignisRepository;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EreignisController {
-    private EreignisRepository repo = new EreignisRepository();
+public class EreignisController{
+    private EreignisRepository repository = new EreignisRepository();
 
     public List<Ereignis> findAll() {
-        return repo.getAllEreignisen();
+        return repository.getAllEreignisen();
     }
 
-//    public List<Ereignis> filterByMinRating(double minRating) {
-//        List<Ereignis> all = repo.getAllEreignisen();
-//        List<Ereignis> filtered = new ArrayList<>();
-//
-//        for (Ereignis m : all) {
-//            if (m.getDistrikt() = 'D') {
-//                filtered.add(m);
-//            }
-//        }
-//        return filtered;
-//    }
 }

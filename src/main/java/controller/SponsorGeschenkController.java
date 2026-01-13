@@ -5,11 +5,11 @@ import repository.SponsorGeschenkRepository;
 import java.util.ArrayList;
 import java.util.List;
 
-class SponsorGeschenkController {
-    private SponsorGeschenkRepository repo = new SponsorGeschenkRepository();
+public class SponsorGeschenkController {
+    private SponsorGeschenkRepository repository = new SponsorGeschenkRepository();
 
     public List<SponsorGeschenk> findAll() {
-        return repo.getAllSponsorGeschenken();
+        return repository.getAllSponsorGeschenken();
     }
 
 }

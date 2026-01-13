@@ -1,6 +1,6 @@
 package model;
 
-public class Ereignis extends Tribut{
+public class Ereignis{
     private int id;
     private int tributId;
     Eventyp eventyp;

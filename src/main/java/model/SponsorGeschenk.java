@@ -1,6 +1,6 @@
 package model;
 
-public class SponsorGeschenk extends Tribut{
+public class SponsorGeschenk{
     private int id;
     private int tributId;
     private String itemName;
