@@ -45,7 +45,11 @@ public class TributController {
         List<Tribut> all = repository.getAllTributen();
         List<Tribut> filtered = new ArrayList<>();
 
-
+        for (Tribut m : all) {
+            if (m.getEventyp() == 'SPONSORED') {
+                filtered.add(m);
+            }
+        }
         return filtered;
     }
 }
