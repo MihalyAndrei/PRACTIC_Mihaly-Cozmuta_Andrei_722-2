@@ -1,15 +1,15 @@
 package controller;
 
-import model.Ereignis;
-import repository.EreignisRepository;
+import model.Tribut;
+import repository.TributRepository;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EreignisController {
-    private EreignisRepository repo = new EreignisRepository();
+class TributController {
+    private TributRepository repo = new TributRepository();
 
-    public List<Ereignis> findAll() {
-        return repo.getAllEreignisen();
+    public List<Tribut> findAll() {
+        return repo.getAllTributen();
     }
 
 //    public List<Ereignis> filterByMinRating(double minRating) {

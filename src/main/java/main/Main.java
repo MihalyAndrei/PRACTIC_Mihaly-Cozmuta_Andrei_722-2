@@ -1,17 +1,58 @@
 package main;
+import controller.EreignisController;
+import controller.MovieController;
+import controller.MovieController;
+import model.Movie;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.List;
+import java.util.Scanner;
+
 public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+    public static void main(String[] args) {
+        MovieController controller = new MovieController();
+        Scanner scanner = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+        while (true) {
+            System.out.println("\n=== MOVIE MENU ===");
+            System.out.println("1. Arata toate filmele");
+            System.out.println("2. Cauta filme bune (dupa nota minima)");
+            System.out.println("3. Iesire");
+            System.out.print("Alege: ");
+
+            String optiune = scanner.nextLine();
+
+            switch (optiune) {
+                case "1":
+                    List<Movie> all = controller.findAll();
+                    for (Movie m : all) {
+                        System.out.println(m);
+                    }
+                    break;
+
+                case "2":
+                    System.out.print("Introdu nota minima (ex: 8.0): ");
+                    // Citim ca String si convertim, e mai sigur
+                    String inputNota = scanner.nextLine();
+                    double nota = Double.parseDouble(inputNota);
+
+                    List<Movie> bune = controller.filterByMinRating(nota);
+                    if (bune.isEmpty()) {
+                        System.out.println("Niciun film gasit cu nota asta.");
+                    } else {
+                        System.out.println("Filme gasite:");
+                        for (Movie m : bune) {
+                            System.out.println(m);
+                        }
+                    }
+                    break;
+
+                case "3":
+                    System.out.println("Pa!");
+                    return; // Oprește programul
+
+                default:
+                    System.out.println("Optiune gresita!");
+            }
         }
     }
 }

@@ -21,7 +21,7 @@ public class TributRepository {
         }
     }
 
-    public List<Tribut> getAllEreignisen() {
+    public List<Tribut> getAllTributen() {
         return tributen;
     }
 }
